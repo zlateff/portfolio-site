@@ -1,0 +1,87 @@
+.jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-image: url("../img/laptop.jpg");
+  background-size: cover;
+  background-color: #fff;
+}
+
+#logo {
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+  padding-top: 6px;
+}
+
+#logo img {
+  display: block;
+  margin: auto;
+}
+
+form {
+  margin: 0 auto;
+}
+
+.list-unstyled li {
+  margin-bottom: 8px;
+}
+
+.list-unstyled a {
+  text-decoration: none;
+}
+
+.list-connect li {
+  margin-bottom: 30px;
+}
+
+#connect {
+  padding-top: 70px;
+}
+
+.card-text {
+  text-align: justify;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .card-img-top {
+    height: 280px;
+  }
+}
+
+@media (min-width: 991px) {
+  #connect {
+    padding-left: 80px;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
