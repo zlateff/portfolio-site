@@ -1,13 +1,63 @@
-var largest = 0; //start with 0
+// JSON array for projects info
+var projects = [
+    {
+        "imgsrc" : "img/fresh-tomatoes.jpg",
+        "previewurl" : "#",
+        "githuburl" : "https://github.com/zlateff/movie-trailer-website",
+        "description" : 'Simple web application written in Python that serves' +
+                        ' an HTML page showing posters of movies and allowing' +
+                        ' users to play their trailers.',
+        "skills" : "Python"
+    },
+    {
+        "imgsrc" : "img/portfolio.jpg",
+        "previewurl" : "#",
+        "githuburl" : "https://github.com/zlateff/portfolio-site",
+        "description" : "My Portfolio site you are currently browsing. The Bootstrap framework was used to make it responsive.",
+        "skills" : "HTML, CSS, Bootstrap, JavaScript, PHP"
+    },
+    {
+        "imgsrc" : "img/comingsoon.jpg",
+        "previewurl" : "#",
+        "githuburl" : "#",
+        "description" : "This is a placeholder card for my future projects. Come back again to check what else I'll be working on.",
+        "skills" : "TBD"
+    },
+];
 
+for (var i = 0; i < projects.length; i++) {
+    $("#projectcards").append(
+        '<div class="col-lg-4 col-md-6">' +
+            '<div class="card mb-4 box-shadow">' +
+                `<a href="${projects[i]["previewurl"]}" target="_blank">` +
+                    `<img class="card-img-top img-fluid img-thumbnail" src="${projects[i]["imgsrc"]}" alt="Project image"></a>` +
+                '<div class="card-body">' +
+                    '<p class="card-text">'+ projects[i]["description"] +'</p>' +
+                    '<div class="d-flex flex-wrap flex-row">' +
+                        '<div class="btn-group p-2">' +
+                            `<a href="${projects[i]["previewurl"]}" class="btn btn-sm btn-info" target="_blank">View Project</a>` +
+                        '</div>' +
+                        '<div class="btn-group p-2">' +
+                            `<a href="${projects[i]["githuburl"]}" class="btn btn-sm btn-dark" target="_blank">` +
+                                'View Source <i class="fab fa-github"></i></a>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="d-flex flex-row-reverse">' +
+                        '<small class="text-muted">'+ projects[i]["skills"] +'</small>' +
+        '</div></div></div></div>'
+    );
+};
+
+// Set project card elements with same height
+var largest = 0; //start with 0
 $(".card-text").each(function(){ //loop through each card paragraph
    var findHeight = $(this).height(); //find the height
    if(findHeight > largest){ //see if this height is greater than "largest" height
       largest = findHeight; //if it is greater, set largest height to this one 
    }  
 });
-
 $(".card-text").css({"height":largest+"px"});
+
 
 $(function() {
     // Get the form.
