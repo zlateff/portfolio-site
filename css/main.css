@@ -183,6 +183,10 @@ form {
   max-width: 40rem;
 }
 
+.skills {
+  padding-top: 10px;
+}
+
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;

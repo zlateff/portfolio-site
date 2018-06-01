@@ -1,27 +1,41 @@
 // JSON array for projects info
 var projects = [
     {
-        "imgsrc" : "img/fresh-tomatoes.jpg",
-        "previewurl" : "#",
-        "githuburl" : "https://github.com/zlateff/movie-trailer-website",
-        "description" : 'Simple web application written in Python that serves' +
-                        ' an HTML page showing posters of movies and allowing' +
-                        ' users to play their trailers.',
-        "skills" : "Python"
+        "imgsrc" : "img/books.jpg",
+        "previewurl" : "http://book-catalog-app.herokuapp.com",
+        "githuburl" : "https://github.com/zlateff/item-catalog-application",
+        "description" : "Content management system developed using the Flask framework and SQLAlchemy ORM tool. User authentication is provided via OAuth. Google Books API is used for search and displaying additional content information.",
+        "skills" : "Python, Flask, SQLAlchemy, OAuth <br> HTML, CSS, Bootstrap, Heroku"
+    },
+    {
+        "imgsrc" : "img/gym.jpg",
+        "previewurl" : "http://gymapp.us-east-2.elasticbeanstalk.com/",
+        "githuburl" : "https://bitbucket.org/zlateff/ninth-iteration-project",
+        "description" : "Undergraduate 3-person team project. Responsible for Dev Environment setup, Django configuration, Models & Views creation, and AWS deployment.",
+        "skills" : "Python, Django, Vagrant <br> HTML, CSS, Bootstrap, AWS"
     },
     {
         "imgsrc" : "img/portfolio.jpg",
         "previewurl" : "#",
         "githuburl" : "https://github.com/zlateff/portfolio-site",
-        "description" : "My Portfolio site you are currently browsing. The Bootstrap framework was used to make it responsive.",
+        "description" : "The site you are currently browsing. Responsive layout achieved with Bootstrap. AJAX and PHP used for contact form. JavaScript used for populating and aligning project cards.",
         "skills" : "HTML, CSS, Bootstrap, JavaScript, PHP"
     },
     {
-        "imgsrc" : "img/comingsoon.jpg",
-        "previewurl" : "#",
-        "githuburl" : "#",
-        "description" : "This is a placeholder card for my future projects. Come back again to check what else I'll be working on.",
-        "skills" : "TBD"
+        "imgsrc" : "img/logs.jpg",
+        "previewurl" : "https://github.com/zlateff/logs-analysis",
+        "githuburl" : "https://github.com/zlateff/logs-analysis",
+        "description" : "Reporting tool summarizing data from a large database.",
+        "skills" : "Python, SQL"
+    },
+    {
+        "imgsrc" : "img/fresh-tomatoes.jpg",
+        "previewurl" : "https://github.com/zlateff/movie-trailer-website",
+        "githuburl" : "https://github.com/zlateff/movie-trailer-website",
+        "description" : 'Simple web application written in Python that serves' +
+                        ' an HTML page showing posters of movies and allowing' +
+                        ' users to play their trailers.',
+        "skills" : "Python, HTML, CSS"
     },
 ];
 
@@ -42,13 +56,13 @@ for (var i = 0; i < projects.length; i++) {
                                 'View Source <i class="fab fa-github"></i></a>' +
                         '</div>' +
                     '</div>' +
-                    '<div class="d-flex flex-row-reverse">' +
+                    '<div class="d-flex flex-row-reverse skills">' +
                         '<small class="text-muted">'+ projects[i]["skills"] +'</small>' +
         '</div></div></div></div>'
     );
 };
 
-// Set project card elements with same height
+// Set project card description with same height
 var largest = 0; //start with 0
 $(".card-text").each(function(){ //loop through each card paragraph
    var findHeight = $(this).height(); //find the height
@@ -58,6 +72,15 @@ $(".card-text").each(function(){ //loop through each card paragraph
 });
 $(".card-text").css({"height":largest+"px"});
 
+// Set project card skills with same height
+var largestskill = 0; //start with 0
+$(".skills").each(function(){ //loop through each card paragraph
+   var findHeight = $(this).height(); //find the height
+   if(findHeight > largestskill){ //see if this height is greater than "largest" height
+      largestskill = findHeight; //if it is greater, set largest height to this one 
+   }  
+});
+$(".skills").css({"height":largestskill+"px"});
 
 $(function() {
     // Get the form.
