@@ -11,7 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <!-- Custom styles -->
     <link href="css/main.css" rel="stylesheet">
@@ -25,8 +25,8 @@
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
               <h4 class="text-white">About</h4>
-              <p class="text-muted">I'm an aspiring full-stack developer who strives to learn something new every day. <br>
-                  <a href="#projects">Check out</a> some of the projects I have been working on. 
+              <p class="text-light">I'm a full-stack developer commited to lifelong learning. <br>
+                  <a href="#projects">Check out</a> some of the projects I've been working on. 
                   Feedback is always appreciated, so don't hesitate to <a href="#contact">Say Hello</a> and let me know what you think.
               </p>
             </div>
@@ -58,14 +58,12 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">My Projects</h1>
-          <p class="lead text-muted">Below are some of the projects I've been working on. 
-            They are listed in a complexity order, starting with the simpler ones fist.
-            Projects that I'm currently working on are listed last.
+          <h1 class="jumbotron-heading">Hey, I'm Ivan</h1>
+          <p class="lead text-dark"><strong>Full-stack web developer based in Chicago area.</strong><br>I like fun projects. I like fun people. I like working on fun projects with fun people.
           </p>
           <p>
             <a href="#projects" class="btn btn-primary my-2">View My Projects</a>
-            <a href="#contact" class="btn btn-secondary my-2">Contact Me</a>
+            <a href="#contact" class="btn btn-secondary my-2">Get In Touch</a>
           </p>
         </div>
       </section>
@@ -87,7 +85,7 @@
                     </div>
                     <div class="btn-group p-2">
                       <a href="https://github.com/zlateff/movie-trailer-website" class="btn btn-sm btn-outline-secondary" target="_blank">
-                        View Source <i class="fa fa-github"></i></a>
+                        View Source <i class="fab fa-github"></i></a>
                     </div>
                   </div>
                   <div class="d-flex flex-row-reverse">
@@ -109,7 +107,7 @@
                     </div>
                     <div class="btn-group p-2">
                       <a href="https://github.com/zlateff/ant-colony-simulator" class="btn btn-sm btn-outline-secondary" target="_blank">
-                        View Source <i class="fa fa-github"></i></a>
+                        View Source <i class="fab fa-github"></i></a>
                     </div>
                   </div>
                   <div class="d-flex flex-row-reverse">
@@ -131,7 +129,7 @@
                       </div>
                       <div class="btn-group p-2">
                         <a href="https://github.com/zlateff/portfolio-site" class="btn btn-sm btn-outline-secondary" target="_blank">
-                          View Source <i class="fa fa-github"></i></a>
+                          View Source <i class="fab fa-github"></i></a>
                       </div>
                     </div>
                     <div class="d-flex flex-row-reverse">
@@ -153,7 +151,7 @@
                     </div>
                     <div class="btn-group p-2">
                       <a href="" class="btn btn-sm btn-outline-secondary" target="_blank">
-                        View Source <i class="fa fa-github"></i></a>
+                        View Source <i class="fab fa-github"></i></a>
                     </div>
                   </div>
                   <div class="d-flex flex-row-reverse">
@@ -175,7 +173,7 @@
                     </div>
                     <div class="btn-group p-2">
                       <a href="" class="btn btn-sm btn-outline-secondary" target="_blank">
-                        View Source <i class="fa fa-github"></i></a>
+                        View Source <i class="fab fa-github"></i></a>
                     </div>
                   </div>
                   <div class="d-flex flex-row-reverse">
@@ -197,7 +195,7 @@
                       </div>
                       <div class="btn-group p-2">
                         <a href="" class="btn btn-sm btn-outline-secondary" target="_blank">
-                          View Source <i class="fa fa-github"></i></a>
+                          View Source <i class="fab fa-github"></i></a>
                       </div>
                     </div>
                     <div class="d-flex flex-row-reverse">
@@ -213,26 +211,28 @@
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-lg-6" id="contact">
-              <form>
+              <form id="ajax-contact" action="php/mail.php" method="post">
                 <h3 id="form-heading">Say Hello</h3>
-                <div class="form-group">
+                <div id="name-group" class="form-group">
                   <label for="name">Name</label>
-                  <input class="form-control" type="text" placeholder="Your Name" id="name">
+                  <input class="form-control" type="text" placeholder="Your Name" name="name" id="name">
                 </div>
-                <div class="form-group">
+                <div id="email-group" class="form-group">
                   <label for="email">Email address</label>
-                  <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                  <small id="emailHelp" class="form-text text-light">I'll never share your email with anyone else.</small>
+                  <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
                 </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input class="form-control" type="text" placeholder="Reason for message" id="subject">
-                  </div>
-                <div class="form-group">
+                <div id="message-group" class="form-group">
                   <label for="message">Message</label>
-                  <textarea class="form-control" id="message" placeholder="Your message" rows="3" required></textarea>
+                  <textarea class="form-control" id="message" placeholder="Your message" name="message" rows="5"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div id="form-messages"></div>
+                <div class="col-xs-12 button-holder">
+                    <div class="ajax-button">
+                        <div class="fa fa-check done"></div>
+                        <div class="fa fa-times failed"></div>
+                <input id="submit" class="submit" type="button" value="Submit" />
+                    </div>
+                </div>
               </form>
             </div>
             <div class="col-lg-4" id="connect">
@@ -250,12 +250,14 @@
       </div>
     </main>
 
-    <footer class="text-muted">
+    <footer class="text-muted footer">
       <div class="container">
         <div class="row">
-          <div class="col-8">
+          <div class="col-8 text-center">
             <p>Copyright &copy; 2018 Ivan Zlatev</p>
-            <p>Do you like my page? You can find the code for it on my <a href="https://github.com/zlateff" target="_blank">GitHub Profile</a>.</p>
+            <p class="fa-bottom"><a href="https://www.linkedin.com/in/izlateff/" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/zlateff" target="_blank"><i class="fab fa-github-square"></i></a>
+            </p>
           </div>
           <div class="col-4">
             <a href="#">Back to top</a>
@@ -266,7 +268,7 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- JavaScript -->
